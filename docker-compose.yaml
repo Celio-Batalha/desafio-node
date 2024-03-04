@@ -11,7 +11,7 @@ services:
       - ./node:/usr/src/app
     tty: true
     ports:
-      - "8070:3000"
+      - "8080:3000"
     networks:
       - node-network
     depends_on:
