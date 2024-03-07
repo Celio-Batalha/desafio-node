@@ -11,7 +11,7 @@ services:
       - ./node:/usr/src/app
     tty: true
     ports:
-      - "8080:3000"
+      - "8070:3000"
     networks:
       - node-network
     depends_on:
@@ -43,7 +43,7 @@ services:
       - MYSQL_ROOT_PASSWORD=root
     networks:
       - node-network
-
+      
 networks:
   node-network:
     driver: bridge
