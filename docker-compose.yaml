@@ -20,6 +20,7 @@ services:
       - ./node:/usr/src/app
     restart: always
     tty: true
+    entrypoint: wait-for db-mysql:3306 -t 40 -- sh -c "npm start" node index.js
     depends_on:
       - db   
     networks:
@@ -27,6 +28,7 @@ services:
 
   db:
     image: mysql:8.0.25
+    # image: mysql:5.7
     command: --innodb-use-native-aio=0
     container_name: db
     restart: always
