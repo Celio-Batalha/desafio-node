@@ -18,7 +18,7 @@ connection.query(sql_add)
 const sql_list = `SELECT * FROM people`
 connection.query(sql_list, (err, rows) => {
    if(rows.length){
-      result = '<span style="font-size: 20px;">Parabêns você conseguiu! ' + rows[1].name + '</span>';
+      result = '<span style="font-size: 20px;">Parabêns você conseguiu! ' + rows[0].name + '</span>';
    }else{
       result = '<h3>Nenhum usuário encontrado!</h3>';
    }

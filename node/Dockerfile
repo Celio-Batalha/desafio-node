@@ -8,7 +8,9 @@ RUN apt-get update \
     && apt-get autoremove -yqq --purge wget && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /usr/src/app
-COPY . .
-RUN npm install
+
+COPY ./package*.json /usr/src/app/
+# RUN npm install
+
 EXPOSE 3000
 # CMD [ "node", "index.js" ]
